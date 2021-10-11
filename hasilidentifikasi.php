@@ -1,11 +1,11 @@
-<?php if(!empty($_SESSION['namapas']) && ($_SESSION['passpas'])){
-?>
-        <!-- About-->
-		<div class="container px-4 px-lg-5">
+
+
+                        <!-- About-->
+						<div class="container px-4 px-lg-6">
                 <!-- DataTales Example -->
                 <div class="card shadow mb-3">
                     <div class="card-header py-4">
-                        <h6 class="m-0 font-weight-bold text-primary">Riwayat Identifikasi</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Tabel Riwayat Hasil Identifikasi</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -13,39 +13,40 @@
                                 <thead>
                                     <tr>
 									<th>No</th>
-                                    <th>Nama user</th>
-    	                            <th>Waktu identifikasi</th>
-                                    <th>Gejala</th>
-                                    <th>Hasil identifikasi</th>
-    	                            <!--<th>Nilai</th>-->
-                                    <th>Aksi</th>
+									<th>Nama Pasien</th>
+									<th>Waktu Identifikasi</th>
+									<th>Gejala</th>
+									<th>Hasil Identifikasi</th>
+									<th>Nilai</th>
+									<th>Aksi</th>
+                                     
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
 									<th>No</th>
-                                    <th>Nama user</th>
-    	                            <th>Waktu identifikasi</th>
-                                    <th>Gejala</th>
-                                    <th>Hasil identifikasi</th>
-    	                            <!--<th>Nilai</th>-->
-                                    <th>Aksi</th>
+									<th>Nama Pasien</th>
+									<th>Waktu Identifikasi</th>
+									<th>Gejala</th>
+									<th>Hasil Identifikasi</th>
+									<th>Nilai</th>
+									<th>Aksi</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-								<?php
+  
+   
+   <?php
    	include "koneksi.php";
-	$s = mysqli_query($kon, "select * from keterangan where nama='$_SESSION[namalengkap]' order by tgl_identifikasi DESC");
+	$s = mysqli_query($kon, "select * from keterangan order by id_keterangan");
 	$no = 1;
 	while($data = mysqli_fetch_array($s)){
 		$id_keterangan=$data['id_keterangan'];
-		$id_klaster=$data['id_klaster'];
+		$id_identifikasi=$data['id_identifikasi'];
 		$nama=$data['nama'];
 		$tgl_identifikasi=$data['tgl_identifikasi'];
-		//$nilai=$data['nilai'];
-		$id_identifikasi=$data['id_identifikasi'];
-
-		echo "$sesion";
+		$id_klaster=$data['id_klaster'];
+		$nilai=$data['nilai'];
 	?>
 
 	 	<tr>
@@ -69,9 +70,12 @@
 					echo "$dp[nm_klaster]";
 					
 				?> </td>
-		<!--<td><?php// echo "$nilai";?></td>-->
+		<td><?php echo "$nilai";?></td>
 		
-	<td><button class="btn btn-warning btn-sm"><a href="cetak.php?id=$id&identifikasi= <?php echo $id_identifikasi;?>" style="color:black;" target="blank"> Cetak </a></button></td>
+	<td><a onClick="return confirm('Yakin ingin hapus?')" href="?p=hapushasilidentifikasi&hapus=<?php echo $id_keterangan; ?>"
+	class="btn btn-danger btn-circle btn-sm">
+	<i class="fas fa-trash"></i>
+	</td>
 
 		</tr>
         <?php
@@ -89,8 +93,3 @@
 
 </div>
             <!-- /.container-fluid -->
-				<?php }else{
-		echo "<script language='javascript'>
-		alert('Silahkan login terlebih dahulu untuk melihat hasil identifikasi');
-		window.location=('?p=login')</script>";
-} ?>

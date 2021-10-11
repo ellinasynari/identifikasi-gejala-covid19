@@ -3,11 +3,7 @@ body{
 	font-family:Arial;
 	padding-left:0%;
 	padding-right:0%;
-	padding-top:5px;
-	padding-bottom:5px;
-
-	background-repeat: no-repeat;
-	background-size: cover;
+	padding-top:10px;
 	
 }
 
@@ -15,7 +11,6 @@ body{
 .container1{ background-color:#FFFFFF; }
 .container2{ background-color:#FFFFFF; }
 
-.teal{color: teal;}
 
 .grid{
 	width:100%;
@@ -50,18 +45,6 @@ body{
    width: 97.91666666666666%;
    margin-bottom: 1em;
  }
-}
-
-.card{
-	position:relative;
-	display:flex;
-	flex-direction:column;
-	min-width:0;
-	word-wrap:break-word;
-	background-color:#fff;
-	background-clip:border-box;
-	border:1px solid #e3e6f0;
-	border-radius:.35rem
 }
 
 #login{
@@ -101,7 +84,6 @@ form{
 }
 
 input[type="text"],
-input[type="number"],
 input[type="password"],
 input[type="file"],
 select,
@@ -146,7 +128,7 @@ input[type="submit"]{
 	padding:12px 20px 12px 20px;
 }
 
-a{ color:#008442; text-decoration:none; align-content: center;}
+a{ color:#008442; text-decoration:none;}
 a:hover{ color:#333333;}
 
 /* MENU ====================================================================== */
@@ -176,12 +158,6 @@ li a:hover {
 	color:#FFFFFF;
 }
 
-.widget h3 {
-	background: teal;
-	color: white;
-	padding: 5px;
-	margin-top: 30px;
-}
 
 
 #view{
@@ -199,7 +175,7 @@ table{
 th{
 	text-align:center;
 	padding:10px;
-	background-color:#0f8d52;
+	background-color:#008442;
 	color:#FFFFFF;
 	font-family:Arial;
 	font-size:14px;
