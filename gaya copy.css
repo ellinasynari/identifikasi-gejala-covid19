@@ -3,9 +3,7 @@ body{
 	font-family:Arial;
 	padding-left:0%;
 	padding-right:0%;
-	padding-top:5px;
-	padding-bottom:5px;
-
+	padding-top:10px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	
@@ -50,18 +48,6 @@ body{
    width: 97.91666666666666%;
    margin-bottom: 1em;
  }
-}
-
-.card{
-	position:relative;
-	display:flex;
-	flex-direction:column;
-	min-width:0;
-	word-wrap:break-word;
-	background-color:#fff;
-	background-clip:border-box;
-	border:1px solid #e3e6f0;
-	border-radius:.35rem
 }
 
 #login{
@@ -155,7 +141,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #084d10;
+    background-color: #1e6b7e;
 }
 
 li {
@@ -199,7 +185,7 @@ table{
 th{
 	text-align:center;
 	padding:10px;
-	background-color:#0f8d52;
+	background-color:#0f858d;
 	color:#FFFFFF;
 	font-family:Arial;
 	font-size:14px;
